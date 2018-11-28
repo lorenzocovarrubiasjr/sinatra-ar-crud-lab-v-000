@@ -9,6 +9,28 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-
+    "Hello World"
   end
+  
+  get '/articles/new' do 
+    erb :new 
+  end 
+
+  patch '/posts/:id' do  #updates a post
+    @post = Post.find_by_id(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :show
+  end
+
+
+  delete '/posts/:id/delete' do #delete action
+    @post = Post.find_by_id(params[:id])
+    @post.delete
+    redirect to '/posts'
+  end
+
+
 end
+#>>>>>>> 9c6464d9607186bb92210f4fcc4f928725d5ad16
