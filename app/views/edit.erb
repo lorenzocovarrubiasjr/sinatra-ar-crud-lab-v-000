@@ -1,0 +1,10 @@
+<html>
+  <h1>Update a Post</h1>
+  <form action="/posts/:id" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <p>Edit Name:<input id="name" name="post_name" type="text"></p>
+    <p>Edit Content:<input id="content" name="post_content" type="text"> </p>
+    <input id='submit' type="submit">
+  </form>
+  
+</html>
